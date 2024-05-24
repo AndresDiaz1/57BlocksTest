@@ -1,15 +1,18 @@
+import Image from "next/image";
 import "./header.css";
 export default function Header({ title }: { title: string }) {
   return (
-    <div className="header">
+    <header className="header">
       <h1>{title}</h1>
       <div className="header__pokeball">
-        <img
+        <Image
           className="header__pokeball-image"
           src="/img/pokeball.png"
           alt="Pokeball"
+          width={50}
+          height={50}
         />
       </div>
-    </div>
+    </header>
   );
 }

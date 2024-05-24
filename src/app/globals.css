@@ -1,9 +1,14 @@
 
 :root {
-
+  --background-color: #89E8FF;
   --red-color: #FF1203;
+  --blue-color: #3C72C3;
+  --yellow-color: #FFEE04;
+  --soft-yellow: #FFE8B6;
+  --soft-blue-color: #71A4F1;
   --white-color: #FFE8B6;
   --app-padding: 10px 12px 10px 12px;
+  --app-font: 'PressStart'
 }
 /*
   1. Use a more-intuitive box-sizing model.
@@ -24,6 +29,7 @@
 */
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
 /*
@@ -38,6 +44,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   animation: moveIt 20s linear infinite;
+  background-color: var(--background-color);
 }
 
 /*
@@ -67,6 +74,27 @@ p, h1, h2, h3, h4, h5, h6 {
 */
 #root, #__next {
   isolation: isolate;
+}
+
+input {
+  padding: 8px;
+  background-color: var(--soft-yellow);
+}
+
+button {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: var(--soft-blue-color);
+  cursor: not-allowed;
+}
+
+input, button {
+  border-radius: 25px 25px 25px 25px;
 }
 
 @font-face {
