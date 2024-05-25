@@ -1,0 +1,81 @@
+:host {
+    flex: 2;
+}
+.description {
+    background-color: var(--white-color);
+    margin: 10px 20px 10px 20px;
+    font-family: 'PressStart';
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+  }
+  
+  .description__name {
+    color: var(--red-color);
+    padding: var(--app-padding);
+    text-align: center;
+  }
+  
+  .description__bio {
+    padding: var(--app-padding);
+  }
+  
+  .description__info {
+    display: flex;
+    margin-top: 10px;
+    flex: 1;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .description__info {
+      flex-direction: column;
+    }
+  }
+  
+  .description__info-body, .description__info-types {
+    flex: 1;
+    padding: var(--app-padding);
+  }
+  
+  .description__info-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .description__info-body-weight, .description__info-body-height {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+  
+  .description__info-body-weight label, .description__info-body-height label {
+    color: var(--orange-color);
+  }
+  
+  .description__info-body-weight span, .description__info-body-height span {
+    color: var(--color-brown);
+  }
+  
+  .description__info-types {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .description__info-types ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .description__info-types li {
+    flex: 1;
+  }
+  
+  .description__info-types label {
+    color: var(--orange-color);
+  }
+  
+  .description__info-types span {
+    color: var(--color-brown);
+  }
+  

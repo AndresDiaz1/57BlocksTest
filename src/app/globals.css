@@ -6,6 +6,8 @@
   --yellow-color: #FFEE04;
   --soft-yellow: #FFE8B6;
   --soft-blue-color: #71A4F1;
+  --orange-color: #FF6002;
+  --color-brown: #7F5600;
   --white-color: #FFE8B6;
   --app-padding: 10px 12px 10px 12px;
   --app-font: 'PressStart'
@@ -95,6 +97,12 @@ button:disabled {
 
 input, button {
   border-radius: 25px 25px 25px 25px;
+}
+
+.app-border-style{
+  border-radius: 15px;
+  border: solid 5px var(--red-color);
+  outline: solid 12px var(--yellow-color);
 }
 
 @font-face {

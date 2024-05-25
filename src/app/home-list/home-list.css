@@ -1,0 +1,19 @@
+.table__content{
+    padding-top: 2em;
+    width: 50%;
+    margin: auto;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .table__content{
+        width: 80%;
+        padding-top: 2em;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .table__content {
+        width: 65%;
+    }
+  }

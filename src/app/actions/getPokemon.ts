@@ -9,17 +9,18 @@ import {
 
 const POKEAPI_URL = "https://pokeapi.co/api/v2";
 
-export const getPokemons = async (page: number = 1): Promise<PokemonList> => {
+export const getPokemons = async (
+  page: number = 1
+): Promise<PokemonBasicInfo[]> => {
   const offset = (page - 1) * 20;
   const response = await fetch(
     `${POKEAPI_URL}/pokemon/?offset=${offset}&limit=20`
   );
-  const data = await response.json();
-  console.log("la response", data);
+  const data: PokemonList = await response.json();
   if (!response.ok) {
     throw new Error("Failed to fetch Pokémon");
   }
-  return data;
+  return data.results;
 };
 
 export const filterPokemon = async (
@@ -37,18 +38,20 @@ export const getPokemonDetail = async (
   id: number
 ): Promise<PokemonRawDetail> => {
   const response = await fetch(`${POKEAPI_URL}/pokemon/${id}`);
+  const data = await response.json();
   if (!response.ok) {
     throw new Error("Failed to fetch Pokémon detail");
   }
-  return response.json();
+  return data;
 };
 
 export const getPokemonDescriptionDetail = async (
   id: number
 ): Promise<PokemonRawDescription> => {
   const response = await fetch(`${POKEAPI_URL}/pokemon-species/${id}`);
+  const data = await response.json();
   if (!response.ok) {
     throw new Error("Failed to fetch Pokémon description detail");
   }
-  return response.json();
+  return data;
 };

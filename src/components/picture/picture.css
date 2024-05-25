@@ -1,0 +1,20 @@
+:host {
+    flex: 2;
+    display: flex;
+  }
+  
+  .picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .picture__img {
+    image-rendering: pixelated;
+    height: 100%;
+    padding: var(--app-padding); 
+    position: relative;
+  }
+  

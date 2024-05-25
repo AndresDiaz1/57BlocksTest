@@ -1,8 +1,14 @@
+import PokemonList from "@/components/pokemon-list/pokemon-list";
 import { getPokemons } from "../actions/getPokemon";
+import "./home-list.css";
 
 export default async function HomeList() {
-  const pokemon = await getPokemons();
-  console.log("pokemon", pokemon);
-
-  return <div className="home">home</div>;
+  const pokemons = await getPokemons();
+  return (
+    <div className="home">
+      <div className="table__content">
+        <PokemonList listOfPokemons={pokemons} />
+      </div>
+    </div>
+  );
 }
