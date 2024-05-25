@@ -31,7 +31,13 @@
 */
 html, body {
   height: 100%;
-  overflow: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-image: url('/img/background.jpg') ;
+  background-size: cover;
+  background-repeat: repeat;
+  animation: moveIt 20s linear infinite;
+  background-color: var(--background-color);
 }
 
 /*
@@ -40,13 +46,7 @@ html, body {
   5. Improve text rendering
 */
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  background-image: url('/img/background.jpg') ;
-  background-size: cover;
-  background-repeat: no-repeat;
-  animation: moveIt 20s linear infinite;
-  background-color: var(--background-color);
+
 }
 
 /*

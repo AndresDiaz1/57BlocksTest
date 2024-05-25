@@ -4,6 +4,7 @@ import {
 } from "@/app/actions/getPokemon";
 import Description from "@/components/description/description";
 import Picture from "@/components/picture/picture";
+import "./pokemon-detail.css";
 
 export default async function PokemonDetail({
   params,
