@@ -9,9 +9,7 @@ import {
 
 const POKEAPI_URL = "https://pokeapi.co/api/v2";
 
-export const getPokemons = async (
-  page: number = 1
-): Promise<PokemonBasicInfo[]> => {
+export const getPokemons = async (page: number = 1): Promise<PokemonList> => {
   const offset = (page - 1) * 20;
   const response = await fetch(
     `${POKEAPI_URL}/pokemon/?offset=${offset}&limit=20`
@@ -20,7 +18,7 @@ export const getPokemons = async (
   if (!response.ok) {
     throw new Error("Failed to fetch Pokémon");
   }
-  return data.results;
+  return data;
 };
 
 export const filterPokemon = async (

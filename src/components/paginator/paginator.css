@@ -1,0 +1,65 @@
+.paginator {
+    display: flex;
+    padding-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  
+  .paginator .page-item {
+    display: inline;
+  }
+  
+  .paginator .page-item:first-child .paginator__page-link {
+    margin-left: 0;
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+  }
+  
+  .paginator .page-item:last-child .paginator__page-link {
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  
+  .paginator .page-item.active .paginator__page-link,
+  .paginator .page-item.active .paginator__page-link:focus,
+  .paginator .page-item.active .paginator__page-link:hover {
+    z-index: 2;
+    color: var(--white-color);
+    cursor: default;
+    background-color: var(--red-color);
+    border-color: var(--red-color);
+  }
+  
+  .paginator .page-item.disabled .paginator__page-link,
+  .paginator .page-item.disabled .paginator__page-link:focus,
+  .paginator .page-item.disabled .paginator__page-link:hover {
+    color: #818a91;
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: var(--white-color);
+    border-color: var(--white-color);
+  }
+  
+  .paginator .paginator__page-link {
+    position: relative;
+    float: left;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    color: var(--red-color);
+    text-decoration: none;
+    background-color: var(--white-color);
+    border: 1px solid var(--white-color);
+    cursor: pointer;
+    font-family: 'PressStart';
+  }
+  
+  .paginator .paginator__page-link:focus,
+  .paginator .paginator__page-link:hover {
+    color: var(--red-color);
+    background-color: var(--white-color);
+    border-color: var(--white-color);
+  }
+  
