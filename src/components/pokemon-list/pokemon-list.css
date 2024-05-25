@@ -4,7 +4,7 @@
 }
 
 .table__container{
-    height: 60vh;
+    height: 50vh;
     overflow-y: auto;
     list-style-type: none;
     padding: 0;

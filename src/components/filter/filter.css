@@ -1,0 +1,12 @@
+.filter {
+    margin-bottom: 1.5rem;
+    display: flex;
+}
+
+.filter__form-input{
+    padding:  var(--app-padding);
+    border-radius: 25px 25px 25px 25px;
+    background-color: var(--white-color);
+    width: 100%;
+    font-family: var(--app-font);
+}
