@@ -9,12 +9,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  currentPath,
 }: Readonly<{
   children: React.ReactNode;
-  currentPath: string;
 }>) {
-  console.log("el curebfs", currentPath);
   return (
     <html lang="en">
       <body>
