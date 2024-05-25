@@ -1,20 +1,25 @@
+"use client";
 import Image from "next/image";
 import "./header.css";
 import NavBar from "../navbar/navbar";
+import useRedirectAccordingToLoginState from "@/hooks/useRedirectAccordingToLoginState";
 export default function Header({ title }: { title: string }) {
+  useRedirectAccordingToLoginState();
   return (
-    <header className="header">
-      <h1>{title}</h1>
+    <>
+      <header className="header">
+        <h1>{title}</h1>
+        <div className="header__pokeball">
+          <Image
+            className="header__pokeball-image"
+            src="/img/pokeball.png"
+            alt="Pokeball"
+            width={50}
+            height={50}
+          />
+        </div>
+      </header>
       <NavBar />
-      <div className="header__pokeball">
-        <Image
-          className="header__pokeball-image"
-          src="/img/pokeball.png"
-          alt="Pokeball"
-          width={50}
-          height={50}
-        />
-      </div>
-    </header>
+    </>
   );
 }

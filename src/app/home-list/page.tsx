@@ -1,8 +1,8 @@
-"use client";
+import { getPokemons } from "../actions/getPokemon";
 
-import useRedirectAccordingToLoginState from "@/hooks/useRedirectAccordingToLoginState";
+export default async function HomeList() {
+  const pokemon = await getPokemons();
+  console.log("pokemon", pokemon);
 
-export default function HomeList() {
-  useRedirectAccordingToLoginState();
-  return <h1>hmelist</h1>;
+  return <div className="home">home</div>;
 }

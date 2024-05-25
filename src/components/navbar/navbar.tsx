@@ -12,7 +12,7 @@ export default function NavBar() {
       {pathname !== "/" && (
         <nav className="tab-bar">
           {routes.map((route) => (
-            <Link href={route.path}>
+            <Link href={route.path} key={route.path}>
               <span
                 className={`tab ${pathname === route.path ? "active-tab" : ""}`}
               >
