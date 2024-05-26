@@ -3,6 +3,8 @@ import { FormEvent, useEffect, useState } from "react";
 import "./page.css";
 import { useRouter } from "next/navigation";
 import useRedirectAccordingToLoginState from "@/hooks/useRedirectAccordingToLoginState";
+import { db } from "@/db/db";
+import { pass } from "three/examples/jsm/nodes/Nodes.js";
 
 export default function Home() {
   useRedirectAccordingToLoginState();
@@ -15,11 +17,10 @@ export default function Home() {
     return email.length > 0 && password.length > 0;
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (validateForm()) {
-      // Simulate a login (normally you would have API calls here)
-      localStorage.setItem("user", JSON.stringify({ email }));
+      await db.users?.add({ email, password: btoa(password) });
       setIsLoggedIn(true);
       router.push("/home-list");
     }
