@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./withAuth.css";
 
 export default function withAuth(WrappedComponent: React.ComponentType) {
-  return (props: any) => {
+  const WithAuth = (props: any) => {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(true);
     const [isAuth, setIsAuth] = useState(false);
@@ -29,4 +29,10 @@ export default function withAuth(WrappedComponent: React.ComponentType) {
 
     return isAuth ? <WrappedComponent {...props} /> : null;
   };
+
+  const wrappedComponentName =
+    WrappedComponent.displayName || WrappedComponent.name || "Component";
+  WithAuth.displayName = `withAuth(${wrappedComponentName})`;
+
+  return WithAuth;
 }
