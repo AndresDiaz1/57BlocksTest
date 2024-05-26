@@ -105,6 +105,48 @@ input, button {
   outline: solid 12px var(--yellow-color);
 }
 
+.banner {
+  min-height: 100vh;
+  background-color: var(--soft-blue-color);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#banner-1 {
+  left: 0;
+
+}
+#banner-2 {
+  left: 25%;
+
+}
+#banner-3 {
+  left: 50%;
+
+}
+#banner-4 {
+  left: 75%;
+
+}
+
+.split {
+  background-image: url("/img/background2.jpg");
+  background-attachment: fixed;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
 @font-face {
   font-family: 'PressStart';
   src: url('/fonts/Press_Start/PressStart2P-Regular.ttf') format('truetype');
