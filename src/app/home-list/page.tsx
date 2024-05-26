@@ -6,8 +6,9 @@ import Paginator from "@/components/paginator/paginator";
 import { useEffect, useState } from "react";
 import { PokemonBasicInfo } from "@/models/pokemon-model";
 import Filter from "@/components/filter/filter";
+import withAuth from "@/components/withAuth/withAuth";
 
-export default function HomeList() {
+function HomeList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemonList, setPokemonList] = useState<PokemonBasicInfo[]>([]);
   const [totalPokemons, setTotalPokemons] = useState(0);
@@ -52,3 +53,4 @@ export default function HomeList() {
     </div>
   );
 }
+export default withAuth(HomeList);

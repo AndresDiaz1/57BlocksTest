@@ -1,10 +1,9 @@
 "use client";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import "./page.css";
 import { useRouter } from "next/navigation";
 import useRedirectAccordingToLoginState from "@/hooks/useRedirectAccordingToLoginState";
 import { db } from "@/db/db";
-import { pass } from "three/examples/jsm/nodes/Nodes.js";
 
 export default function Home() {
   useRedirectAccordingToLoginState();

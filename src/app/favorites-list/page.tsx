@@ -6,8 +6,9 @@ import { getPokemonDetail } from "../actions/getPokemon";
 import { useEffect, useState } from "react";
 import getIdFromUrl from "@/utils/utils";
 import "../home-list/home-list.css";
+import withAuth from "@/components/withAuth/withAuth";
 
-export default function FavoritesList() {
+function FavoritesList() {
   const [favoritePokemons, setFavoritePokemons] = useState<PokemonBasicInfo[]>(
     []
   );
@@ -28,3 +29,5 @@ export default function FavoritesList() {
     </div>
   );
 }
+
+export default withAuth(FavoritesList);

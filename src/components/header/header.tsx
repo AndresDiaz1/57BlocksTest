@@ -2,9 +2,7 @@
 import Image from "next/image";
 import "./header.css";
 import NavBar from "../navbar/navbar";
-import useRedirectAccordingToLoginState from "@/hooks/useRedirectAccordingToLoginState";
 export default function Header({ title }: { title: string }) {
-  useRedirectAccordingToLoginState();
   return (
     <>
       <header className="header">
