@@ -34,6 +34,11 @@ export const getFavorites = async (): Promise<PokemonBasicInfo[]> => {
   const userEmail = JSON.parse(
     localStorage.getItem("pokedex-user") || "{}"
   ).email;
-  const user = await db.users.get(userEmail);
-  return user?.favorites || [];
+  try {
+    const user = await db.users.get(userEmail);
+    return user?.favorites || [];
+  } catch (err) {
+    console.log("User does not exist, log in first");
+    return [];
+  }
 };

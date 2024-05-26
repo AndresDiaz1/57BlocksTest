@@ -1,9 +1,10 @@
+import { PokemonBasicInfo } from "@/models/pokemon-model";
 import Dexie, { Table } from "dexie";
 
 interface User {
   email: string;
   password: string;
-  favorites: string[];
+  favorites: PokemonBasicInfo[];
 }
 
 class MySubClassedDexie extends Dexie {
