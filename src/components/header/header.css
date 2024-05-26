@@ -13,7 +13,7 @@
 
     position: relative;
     overflow: hidden;
-    margin-right: 10px;
+    margin-right: 0.625rem;
 }
 
 .header__pokeball::before{

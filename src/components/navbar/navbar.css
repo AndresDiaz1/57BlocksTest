@@ -6,6 +6,13 @@
     align-items: center;
     background-color: var(--soft-blue-color);
     box-shadow: 0px 10px 13px -7px black, 31px 8px 2px -10px rgba(0,0,0,0);
+    padding: var(--app-padding);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
 }
 
 .tab-bar a {
@@ -30,4 +37,9 @@
 .active-tab {
     font-weight: bold;
     border-bottom: 2px solid var(--blue-color);
+}
+
+.logout {
+    margin-right: 1.25rem;
+    cursor: pointer;
 }

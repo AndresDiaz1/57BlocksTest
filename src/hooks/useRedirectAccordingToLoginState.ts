@@ -7,9 +7,9 @@ const useRedirectAccordingToLoginState = () => {
 
   useEffect(() => {
     const checkLoginState = async () => {
-      const user = await db.users.toArray();
+      const user = localStorage.getItem("pokedex-user");
       console.log("el usuario", user);
-      if (user.length > 0) {
+      if (user) {
         router.push("/home-list");
       } else {
         router.push("/");

@@ -14,7 +14,12 @@
 
 .login input {
   margin: 10px 0;
-
   width: 200px;
+}
+
+.error-message {
+  font-size: 0.5rem;
+  color:var(--red-color);
+  margin-top: 5px;
 }
 
