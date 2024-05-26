@@ -19,7 +19,7 @@ export default function PokemonListRow({
     event.stopPropagation();
 
     if (isFavorite) {
-      removeFromFavorites(name);
+      removeFromFavorites({ name, url });
     } else {
       addToFavorites({ name, url });
     }

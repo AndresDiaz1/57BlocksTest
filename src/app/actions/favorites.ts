@@ -1,20 +1,39 @@
+import { db } from "@/db/db";
 import { PokemonBasicInfo } from "@/models/pokemon-model";
+import getIdFromUrl from "@/utils/utils";
 
-const FAVORITES_KEY = "favoritePokemons";
-
-export const addToFavorites = (pokemon: PokemonBasicInfo) => {
-  const favorites = getFavorites();
-  favorites.push(pokemon);
-  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+export const addToFavorites = async (pokemon: PokemonBasicInfo) => {
+  const userEmail = JSON.parse(
+    localStorage.getItem("pokedex-user") || "{}"
+  ).email;
+  const user = await db.users.get(userEmail);
+  if (user) {
+    const favorites = user.favorites || [];
+    favorites.push(pokemon);
+    await db.users.update(userEmail, { favorites });
+  }
 };
 
-export const removeFromFavorites = (pokemonName: string) => {
-  let favorites = getFavorites();
-  favorites = favorites.filter((pokemon) => pokemon.name !== pokemonName);
-  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+export const removeFromFavorites = async (
+  pokemonToRemove: PokemonBasicInfo
+) => {
+  const userEmail = JSON.parse(
+    localStorage.getItem("pokedex-user") || "{}"
+  ).email;
+  const user = await db.users.get(userEmail);
+  if (user) {
+    const favorites = user.favorites || [];
+    const updatedFavorites = favorites.filter(
+      (pokemon) => pokemon.name !== pokemonToRemove.name
+    );
+    await db.users.update(userEmail, { favorites: updatedFavorites });
+  }
 };
 
-export const getFavorites = (): PokemonBasicInfo[] => {
-  const favoritesJSON = localStorage.getItem(FAVORITES_KEY);
-  return favoritesJSON ? JSON.parse(favoritesJSON) : [];
+export const getFavorites = async (): Promise<PokemonBasicInfo[]> => {
+  const userEmail = JSON.parse(
+    localStorage.getItem("pokedex-user") || "{}"
+  ).email;
+  const user = await db.users.get(userEmail);
+  return user?.favorites || [];
 };

@@ -14,14 +14,7 @@ export default function FavoritesList() {
 
   useEffect(() => {
     const fetchFavoritePokemons = async () => {
-      const favoritePokemons = getFavorites();
-      const favoritePokemonsData = await Promise.all(
-        favoritePokemons.map(async (pokemon) => {
-          const id = getIdFromUrl(pokemon.url);
-          const pokemonDetail = await getPokemonDetail(parseInt(id));
-          return { name: pokemonDetail.name, url: pokemon.url };
-        })
-      );
+      const favoritePokemonsData = await getFavorites();
       setFavoritePokemons(favoritePokemonsData);
     };
     fetchFavoritePokemons();

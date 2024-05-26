@@ -24,7 +24,7 @@ export default function Home() {
       return atob(user.password) === password;
     }
 
-    await db.users.add({ email, password: btoa(password) });
+    await db.users.add({ email, password: btoa(password), favorites: [] });
     return true;
   };
 
