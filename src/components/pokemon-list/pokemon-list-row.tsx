@@ -8,10 +8,12 @@ export default function PokemonListRow({
   name,
   url,
   isFavorite,
+  onFavoriteToggle,
 }: {
   name: string;
   url: string;
   isFavorite: boolean;
+  onFavoriteToggle: () => void;
 }) {
   const id = getIdFromUrl(url);
   const router = useRouter();
