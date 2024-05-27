@@ -19,7 +19,7 @@ export default function PokemonList({
 
   useEffect(() => {
     fetchFavorites();
-  }, [listOfPokemons]);
+  }, [listOfPokemons, favorites]);
 
   const handleFavoriteToggle = () => {
     fetchFavorites();

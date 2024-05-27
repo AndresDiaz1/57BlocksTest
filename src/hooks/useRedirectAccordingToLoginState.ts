@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { db } from "@/db/db";
 
 const useRedirectAccordingToLoginState = () => {
   const router = useRouter();

@@ -26,6 +26,7 @@ export default function Paginator({
           key={page}
           className={`page-item ${currentPage === page ? "active" : ""}`}
           onClick={() => onPageChange(page)}
+          data-testid="page-link"
         >
           <span className="paginator__page-link">{page}</span>
         </li>

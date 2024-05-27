@@ -28,6 +28,7 @@ export default function PokemonListRow({
       addToFavorites({ name, url });
     }
     setIsAFavorite(!isAFavorite);
+    onFavoriteToggle();
   };
 
   const handleClick = () => {

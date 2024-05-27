@@ -1,6 +1,5 @@
 import { db } from "@/db/db";
 import { PokemonBasicInfo } from "@/models/pokemon-model";
-import getIdFromUrl from "@/utils/utils";
 
 export const addToFavorites = async (pokemon: PokemonBasicInfo) => {
   const userEmail = JSON.parse(

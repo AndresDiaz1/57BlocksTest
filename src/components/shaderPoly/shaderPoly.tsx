@@ -83,7 +83,7 @@ export default function ShaderPoly() {
   };
 
   const onResize = () => {
-    const picture = document.querySelector(".picture") as HTMLImageElement;
+    const picture = document.querySelector("canvas.webgl") as HTMLImageElement;
     // Update sizes
     const sizes = {
       width: picture.clientWidth,
