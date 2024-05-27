@@ -1,8 +1,9 @@
 # 57Blocks Front End Test
 Using:
 - Next.JS
-- Three.js
-- GSAP
+- Three.js: for complex shader animations
+- GSAP: for page transition animations
+- Dexie.js: for indexedDB management
 
 ## Live Demo
 
